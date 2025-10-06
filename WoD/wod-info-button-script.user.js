@@ -26,26 +26,24 @@ GM_addStyle("#wod-orders div div div div > select { width:89% !important; }");
 GM_addStyle('.wod-skill-dropdown + .button_image_info {display: none;}');
 
 setTimeout(() => {
-  let jb = document.getElementById('jumpbox_center');
-  let jb_input = jb.querySelector('input[name="link"]');
-  let jb_click = jb.querySelector('input.button');
+	let jb = document.getElementById('jumpbox_center');
+	let jb_input = jb.querySelector('input[name="link"]');
+	let jb_click = jb.querySelector('input.button');
 	let div = document.querySelectorAll('#wod-orders div div div > div select.wod-skill-dropdown');
   
-  div.forEach(d => {
-    //d.style = d.style;// + ';width:85%;';
-    d.addEventListener('change', () => {
-      console.log(d.options[d.selectedIndex].text);
-  	});
-    let e = document.createElement('input');
-    //e.type = 'submit';
-    e.className = 'button_image_info clickable';
-    e.value = "";
-    e.style = "height:19px;width:17px;";
-    e.addEventListener('click', () => {
-    	console.log('open skillpage', d.options[d.selectedIndex].text);
-      jb_input.value = '[skill:' + d.options[d.selectedIndex].text + ']';
-      jb_click.click();
-    });
-  	d.after(e);
-  });
+	div.forEach(d => {
+		d.addEventListener('change', () => {
+			console.log(d.options[d.selectedIndex].text);
+		});
+		let e = document.createElement('input');
+		e.className = 'button_image_info clickable';
+		e.value = "";
+		e.style = "height:19px;width:17px;";
+		e.addEventListener('click', () => {
+			console.log('open skillpage', d.options[d.selectedIndex].text);
+			jb_input.value = '[skill:' + d.options[d.selectedIndex].text + ']';
+			jb_click.click();
+		});
+		d.after(e);
+	});
 }, 100);
