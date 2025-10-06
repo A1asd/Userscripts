@@ -2,7 +2,7 @@
 // @name		[WoD] Info Button für Fähigkeiten in Kampfkonfig
 // @description	Fügt einen Info Button der Fähigkeit Select-Box in der Kampfkonfig hinzu
 // @match		*://*.world-of-dungeons.de/wod/spiel/hero/skillconf*
-// @version		1.1
+// @version		1.2
 // @updateURL	https://github.com/A1asd/Userscripts/raw/refs/heads/main/WoD/wod-info-button-script.user.js
 // @downloadURL	https://github.com/A1asd/Userscripts/raw/refs/heads/main/WoD/wod-info-button-script.user.js
 // @grant		none
