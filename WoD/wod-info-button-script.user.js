@@ -3,8 +3,8 @@
 // @description	Fügt einen Info Button der Fähigkeit Select-Box in der Kampfkonfig hinzu
 // @match		*://*.world-of-dungeons.de/wod/spiel/hero/skillconf*
 // @version		1.1
-// @updateURL	https://github.com/A1asd/Wod-Userscripts/blob/main/wod-info-button-script.user.js
-// @downloadURL	https://github.com/A1asd/Wod-Userscripts/blob/main/wod-info-button-script.user.js
+// @updateURL	https://github.com/A1asd/Userscripts/blob/main/WoD/wod-info-button-script.user.js
+// @downloadURL	https://github.com/A1asd/Userscripts/blob/main/WoD/wod-info-button-script.user.js
 // @grant		none
 // @author		A1asd
 // ==/UserScript==
