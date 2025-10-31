@@ -2,7 +2,7 @@
 // @name		[Starmarines] Restore avatar on profile page
 // @description	Stellt den generierten Avatar auf der Profilseite wieder her
 // @match		*://*.starmarines.de/wod/spiel/hero/profile*
-// @version		0.8
+// @version		0.9
 // @updateURL	https://github.com/A1asd/Userscripts/raw/refs/heads/main/Starmarines/restore-avatar-script.user.js
 // @downloadURL	https://github.com/A1asd/Userscripts/raw/refs/heads/main/Starmarines/restore-avatar-script.user.js
 // @grant		none
