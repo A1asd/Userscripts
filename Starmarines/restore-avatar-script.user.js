@@ -9,5 +9,5 @@
 // @author		A1asd
 // ==/UserScript==
 
-let image = document.querySelector('#smarttabs__details img');
+let image = document.querySelector('img[src*="136.243.45.117"');
 image.src = image.src.replace('136.243.45.117', 'charlie.starmarines.de');
