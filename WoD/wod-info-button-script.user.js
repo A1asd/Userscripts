@@ -2,7 +2,7 @@
 // @name		[WoD] Info Button für Fähigkeiten in Kampfkonfig
 // @description	Fügt einen Info Button der Fähigkeit Select-Box in der Kampfkonfig hinzu
 // @match		*://*.world-of-dungeons.de/wod/spiel/hero/skillconf*
-// @version		1.3
+// @version		1.4
 // @updateURL	https://github.com/A1asd/Userscripts/raw/refs/heads/main/WoD/wod-info-button-script.user.js
 // @downloadURL	https://github.com/A1asd/Userscripts/raw/refs/heads/main/WoD/wod-info-button-script.user.js
 // @grant		none
@@ -35,7 +35,9 @@ function createInfoButton() {
 function createInfoSkillButton(jb_input, jb_click, actualSelect) {
 	let infoButton = createInfoButton();
   infoButton.addEventListener('click', () => {
-		jb_input.value = '[skill:' + actualSelect.options[actualSelect.selectedIndex].text + ']';
+    let skillText = actualSelect.options[actualSelect.selectedIndex].text;
+    if (skillText == '') return;
+		jb_input.value = '[skill:' + skillText + ']';
 		jb_click.click();
   });
   return infoButton;
@@ -44,7 +46,11 @@ function createInfoSkillButton(jb_input, jb_click, actualSelect) {
 function createInfoItemButton(jb_input, jb_click, actualSelect) {
 	let infoButton = createInfoButton();
   infoButton.addEventListener('click', () => {
-		jb_input.value = '[item:' + actualSelect.options[actualSelect.selectedIndex].text + ']';
+    let itemText = actualSelect.options[actualSelect.selectedIndex].text;
+    if (itemText == '(automatisch)' || itemText == '(ohne Gegenstand)') return;
+    itemText = itemText.replace('!! ', '');
+    itemText = itemText.replace(' (Lager)', '');
+		jb_input.value = '[item:' + itemText + ']';
 		jb_click.click();
   });
   return infoButton;
@@ -59,6 +65,7 @@ setTimeout(() => {
 	let jb_input = jb.querySelector('input[name="link"]');
 	let jb_click = jb.querySelector('input.button');
 	let skillDropDowns = document.querySelectorAll('#wod-orders div div div > div select.wod-skill-dropdown');
+  //let otherSkillSelects = document.querySelectorAll('.orders_top_row');
   
 	skillDropDowns.forEach(dropDown => {
     let itemSelect = dropDown.nextElementSibling.nextElementSibling;
